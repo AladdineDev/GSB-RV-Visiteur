@@ -33,10 +33,10 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/tvErreur"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Échec à la connexion. Recommencez..."
+                    android:text=""
                     android:textStyle="bold" />
 
                 <Space
@@ -51,7 +51,7 @@
                 android:text="Matricule : " />
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/etMatricule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -69,7 +69,7 @@
                 android:text="Mot de passe : " />
 
             <EditText
-                android:id="@+id/editTextTextPassword2"
+                android:id="@+id/etMdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -88,20 +88,22 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/bSeConnecter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Valider" />
+                    android:text="Valider"
+                    android:onClick="seConnecter" />
 
                 <Space
                     android:layout_width="5dp"
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/bAnnuler"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Annuler" />
+                    android:text="Annuler"
+                    android:onClick="annuler" />
 
             </TableRow>
 

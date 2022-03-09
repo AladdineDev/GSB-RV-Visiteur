@@ -1,11 +1,15 @@
 package fr.gsb.rv.modeles;
 
+import java.util.List;
+
 import fr.gsb.rv.entites.Visiteur;
 import fr.gsb.rv.technique.Session;
 
 public class ModeleGsb {
 
     private static ModeleGsb modele = null;
+
+    private List<Visiteur> lesVisiteurs;
 
     private ModeleGsb() {}
 
@@ -17,6 +21,7 @@ public class ModeleGsb {
     }
 
     private void peupler() {
+
     }
 
     public Visiteur seConnecter(String matricule, String mdp) {
