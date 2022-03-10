@@ -4,11 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 
 import fr.gsb.rv.entites.Visiteur;
 import fr.gsb.rv.technique.Session;
@@ -31,21 +47,64 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void seConnecter(View view) {
-        Visiteur dandre = new Visiteur("dandre", "azerty", "Andre", "David");
-        String dandreNom = dandre.getPrenom() + " " + dandre.getNom();
-        Session.ouvrir(dandre);
-        if(Session.estOuverte()) {
-            bSeConnecter = (Button) findViewById(R.id.bSeConnecter);
-            bSeDeconnecter = (Button) findViewById(R.id.bAnnuler);
-            Toast.makeText(this, dandreNom, Toast.LENGTH_LONG).show();
-            bSeConnecter.setEnabled(false);
-            bSeDeconnecter.setEnabled(false);
-        } else {
-            tvErreur = findViewById(R.id.tvErreur);
-            tvErreur.setText("Échec à la connexion. Recommencez...");
-            tvErreur.setTextColor(Color.RED);
-            annuler(view);
+
+        try {
+            etMatricule = findViewById(R.id.etMatricule);
+            etMdp = findViewById(R.id.etMdp);
+            String matricule = URLEncoder.encode(etMatricule.getText().toString(),"UTF-8");
+            String mdp = URLEncoder.encode(etMdp.getText().toString(),"UTF-8");
+            String url = String.format("https://192.168.1.24:5000/visiteurs/%s/%s", matricule, mdp);
+            Visiteur visiteur = new Visiteur();
+
+            Response.Listener<JSONObject> ecouteurReponse = response -> {
+                try {
+                    visiteur.setMatricule(response.getString("vis_matricule"));
+                    visiteur.setNom(response.getString("vis_nom"));
+                    visiteur.setPrenom(response.getString("vis_prenom"));
+                    Log.i("APP-RV", visiteur.getNom() + " " + visiteur.getPrenom());
+
+                    Session.ouvrir(visiteur);
+                    if(Session.estOuverte()) {
+                        bSeConnecter = (Button) findViewById(R.id.bSeConnecter);
+                        bSeDeconnecter = (Button) findViewById(R.id.bAnnuler);
+                        Toast.makeText(this, visiteur.getPrenom() + " " + visiteur.getNom(), Toast.LENGTH_LONG).show();
+                        bSeConnecter.setEnabled(false);
+                        bSeDeconnecter.setEnabled(false);
+                    } else {
+                        tvErreur = findViewById(R.id.tvErreur);
+                        tvErreur.setText("Échec à la connexion. Recommencez...");
+                        tvErreur.setTextColor(Color.RED);
+                        annuler(view);
+                    }
+
+                } catch (JSONException e) {
+                    Log.e("APP-RV", "Erreur JSON : " + e.getMessage());
+                }
+            };
+
+            Response.ErrorListener ecouteurErreur = error -> {
+                Log.e("APP-RV", "Erreur JSON : " + error.getMessage());
+                tvErreur = findViewById(R.id.tvErreur);
+                tvErreur.setText("Échec à la connexion. Recommencez...");
+                tvErreur.setTextColor(Color.RED);
+                annuler(view);
+            };
+
+            JsonObjectRequest requete = new JsonObjectRequest(
+                    Request.Method.GET,
+                    url,
+                    null,
+                    ecouteurReponse,
+                    ecouteurErreur
+            );
+
+            RequestQueue fileRequetes = Volley.newRequestQueue(this);
+            fileRequetes.add(requete);
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
+
     }
 
     public void annuler(View view) {

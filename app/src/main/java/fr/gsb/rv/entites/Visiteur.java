@@ -3,11 +3,17 @@ package fr.gsb.rv.entites;
 public class Visiteur {
 
     private String matricule;
-    private String mdp;
+    private String mdp = "azerty";
     private String nom;
     private String prenom;
 
     public Visiteur(){}
+
+    public Visiteur(String matricule, String nom, String prenom) {
+        this.matricule = matricule;
+        this.nom = nom;
+        this.prenom = prenom;
+    }
 
     public Visiteur(String matricule, String mdp, String nom, String prenom) {
         this.matricule = matricule;
