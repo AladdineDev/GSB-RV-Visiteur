@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             etMdp = findViewById(R.id.etMdp);
             String matricule = URLEncoder.encode(etMatricule.getText().toString(),"UTF-8");
             String mdp = URLEncoder.encode(etMdp.getText().toString(),"UTF-8");
-            String url = String.format("https://192.168.1.24:5000/visiteurs/%s/%s", matricule, mdp);
+            String url = String.format("https://10.0.2.2:9967/visiteurs/%s/%s", matricule, mdp);
             Visiteur visiteur = new Visiteur();
 
             Response.Listener<JSONObject> ecouteurReponse = response -> {
