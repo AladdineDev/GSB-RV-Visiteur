@@ -2,19 +2,16 @@ package fr.gsb.rv;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -23,8 +20,6 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
 
 import fr.gsb.rv.entites.Visiteur;
 import fr.gsb.rv.technique.Session;
@@ -33,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     static final String TAG = "GSB MAIN ACTIVITY";
 
-    TextView tvErreur;
     EditText etMatricule;
     EditText etMdp;
     Button bSeConnecter;
@@ -65,15 +59,13 @@ public class MainActivity extends AppCompatActivity {
 
                     Session.ouvrir(visiteur);
                     if(Session.estOuverte()) {
-                        bSeConnecter = (Button) findViewById(R.id.bSeConnecter);
-                        bSeDeconnecter = (Button) findViewById(R.id.bAnnuler);
+                        bSeConnecter = findViewById(R.id.bSeConnecter);
+                        bSeDeconnecter = findViewById(R.id.bAnnuler);
                         Toast.makeText(this, visiteur.getPrenom() + " " + visiteur.getNom(), Toast.LENGTH_LONG).show();
                         bSeConnecter.setEnabled(false);
                         bSeDeconnecter.setEnabled(false);
                     } else {
-                        tvErreur = findViewById(R.id.tvErreur);
-                        tvErreur.setText("Échec à la connexion. Recommencez...");
-                        tvErreur.setTextColor(Color.RED);
+                        Toast.makeText(this, "Échec à la connexion. Recommencez...", Toast.LENGTH_LONG).show();
                         annuler(view);
                     }
 
@@ -84,9 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
             Response.ErrorListener ecouteurErreur = error -> {
                 Log.e("APP-RV", "Erreur JSON : " + error.getMessage());
-                tvErreur = findViewById(R.id.tvErreur);
-                tvErreur.setText("Échec à la connexion. Recommencez...");
-                tvErreur.setTextColor(Color.RED);
+                Toast.makeText(this, "Échec à la connexion. Recommencez...", Toast.LENGTH_LONG).show();
                 annuler(view);
             };
 
