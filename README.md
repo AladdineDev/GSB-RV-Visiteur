@@ -26,13 +26,13 @@ Application de saisie des rapports de visite.
 
   * [Java](http://jdk.java.net/11/) (+ définition de la variable d'environnement [JAVA_HOME](https://www.baeldung.com/java-home-on-windows-7-8-10-mac-os-x-linux#1-single-user))
   * [Android Studio](https://developer.android.com/codelabs/build-your-first-android-app#1) et création d'un [terminal virtuel](https://developer.android.com/studio/run/managing-avds) (API 28 Android 9.0 Pie !)
-  * [GSB-RV-Visiteur](https://github.com/Aaldn/GSB-RV-Visiteur)
+  * [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur)
 
 > En cas de difficulté, reportez-vous à la documentation officielle d'[Android Studio](https://developer.android.com/docs).
 
 ## Installation
 
-_Rappel :_ cette application dépend du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur). Assurez vous d'avoir correctement suivi son installation.
+_Rappel :_ cette application dépend du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur). Assurez-vous d'avoir correctement suivi son installation.
 
 1. Positionnez-vous au sein du répertoire créé lors de l'installation du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur), puis clonez ce dépôt : 
 
@@ -41,7 +41,7 @@ $ cd AppliRV
 $ git clone https://github.com/Aaldn/GSB-RV-Visiteur
 ```
 
-2. Créez un lien symbolique du certificat SSL du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur) :
+2. Créez un lien symbolique du certificat SSL du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur) dans ce projet :
 
 ```bash
 $ ln -s GSB-RV-Visiteur-Serveur/certificate/cert.pem GSB-RV-Visiteur/app/src/main/res/raw/
