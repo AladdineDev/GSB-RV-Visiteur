@@ -24,8 +24,7 @@ Application de saisie des rapports de visite.
 
 ### Prérequis
 
-  * [Java](http://jdk.java.net/11/) (+ définition de la variable d'environnement [JAVA_HOME](https://www.baeldung.com/java-home-on-windows-7-8-10-mac-os-x-linux#1-single-user))
-  * [Android Studio](https://developer.android.com/codelabs/build-your-first-android-app#1) et création d'un [terminal virtuel](https://developer.android.com/studio/run/managing-avds) (API 28 Android 9.0 Pie !)
+  * [Android Studio](https://developer.android.com/studio/) + création d'un [terminal virtuel](https://developer.android.com/studio/run/managing-avds) (API 28 Android 9.0 Pie !)
   * [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur)
 
 > En cas de difficulté, reportez-vous à la documentation officielle d'[Android Studio](https://developer.android.com/docs).
@@ -41,10 +40,11 @@ $ cd AppliRV
 $ git clone https://github.com/Aaldn/GSB-RV-Visiteur
 ```
 
-2. Créez un lien symbolique du certificat SSL du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur) dans ce projet :
+2. Créez un lien vers le certificat SSL du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur) dans ce projet :
 
 ```bash
-$ ln -s GSB-RV-Visiteur-Serveur/certificate/cert.pem GSB-RV-Visiteur/app/src/main/res/raw/
+$ mkdir -p GSB-RV-Visiteur/app/src/main/res/raw
+$ ln GSB-RV-Visiteur-Serveur/certificate/cert.pem GSB-RV-Visiteur/app/src/main/res/raw/
 ```
 
 Vous pouvez maintenant [lancer votre application](https://developer.android.com/training/basics/firstapp/running-app) depuis Android Studio.
