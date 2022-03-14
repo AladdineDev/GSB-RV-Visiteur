@@ -11,19 +11,43 @@ Application de saisie des rapports de visite.
 
 ### Documentation
 
-_À venir_
+  * [Documentation utilisateur](docs/Documentation-Utilisateur.pdf) _(À venir)_
+  * [Documentation technique](docs/Documentation-Technique.pdf) _(À venir)_
 
 ### Contexte
 
-_À venir_
+1. [GSB - Fiche descriptive](docs/01-GSB-AppliRV-FicheDescriptive.pdf)
+2. [GSB - Cas d'utilisation](docs/02-GSB-AppliRV-Visiteur-UC.pdf)
+3. [GSB - Modèle Entité-Association](docs/03-GSB-AppliRV-MEA.pdf) _(À venir)_
+4. [GSB - Diagramme de navigation](docs/04-GSB-AppliRV-Navigation.pdf)
+5. [GSB - Documentation API / Arborescence](docs/05-GSB-AppliRV-Documentation-API.pdf)
 
 ### Prérequis
 
-_À venir_
+  * [Java](http://jdk.java.net/11/) (+ définition de la variable d'environnement [JAVA_HOME](https://www.baeldung.com/java-home-on-windows-7-8-10-mac-os-x-linux#1-single-user))
+  * [Android Studio](https://developer.android.com/codelabs/build-your-first-android-app#1) et création d'un [terminal virtuel](https://developer.android.com/studio/run/managing-avds) (API 28 Android 9.0 Pie !)
+  * [GSB-RV-Visiteur](https://github.com/Aaldn/GSB-RV-Visiteur)
+
+> En cas de difficulté, reportez-vous à la documentation officielle d'[Android Studio](https://developer.android.com/docs).
 
 ## Installation
 
-_À venir_
+_Rappel :_ cette application dépend du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur). Assurez vous d'avoir correctement suivi son installation.
+
+1. Positionnez-vous au sein du répertoire créé lors de l'installation du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur), puis clonez ce dépôt : 
+
+```bash
+$ cd AppliRV
+$ git clone https://github.com/Aaldn/GSB-RV-Visiteur
+```
+
+2. Créez un lien symbolique du certificat SSL du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur) :
+
+```bash
+$ ln -s GSB-RV-Visiteur-Serveur/certificate/cert.pem GSB-RV-Visiteur/app/src/main/res/raw/
+```
+
+Vous pouvez maintenant [lancer votre application](https://developer.android.com/training/basics/firstapp/running-app) depuis Android Studio.
 
 ## Licence
 

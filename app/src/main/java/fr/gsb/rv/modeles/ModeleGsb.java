@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.gsb.rv.entites.Visiteur;
-import fr.gsb.rv.technique.Session;
 
 /*
  * Implémentation d'un pseudo-modèle
