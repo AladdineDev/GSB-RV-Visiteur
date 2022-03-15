@@ -31,7 +31,7 @@ Application de saisie des rapports de visite.
 
 ## Installation
 
-_Rappel :_ cette application dépend du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur). Assurez-vous d'avoir correctement suivi son installation.
+_Rappel :_ cette application dépend du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur). Avant de poursuivre, assurez-vous de l'avoir correctement installé.
 
 1. Positionnez-vous au sein du répertoire créé lors de l'installation du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur), puis clonez ce dépôt : 
 
