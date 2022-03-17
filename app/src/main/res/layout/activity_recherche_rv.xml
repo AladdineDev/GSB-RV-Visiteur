@@ -27,7 +27,7 @@
                 android:id="@+id/tvMois"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Mois" />
 
             <Spinner
                 android:id="@+id/spinnerMois"
@@ -42,7 +42,7 @@
                 android:id="@+id/tvAnnee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Annee" />
 
             <Spinner
                 android:id="@+id/spinnerAnnee"
@@ -57,7 +57,7 @@
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="Afficher la liste des rapports" />
 
         </LinearLayout>
     </FrameLayout>

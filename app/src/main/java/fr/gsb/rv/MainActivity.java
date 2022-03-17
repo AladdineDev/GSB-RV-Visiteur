@@ -2,6 +2,7 @@ package fr.gsb.rv;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -38,13 +39,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        etMatricule = findViewById(R.id.etMatricule);
+        etMdp = findViewById(R.id.etMdp);
+        bSeConnecter = findViewById(R.id.bSeConnecter);
     }
 
     public void seConnecter(View view) {
 
         try {
-            etMatricule = findViewById(R.id.etMatricule);
-            etMdp = findViewById(R.id.etMdp);
             String matricule = URLEncoder.encode(etMatricule.getText().toString(),"UTF-8");
             String mdp = URLEncoder.encode(etMdp.getText().toString(),"UTF-8");
             String url = String.format("https://10.0.2.2:9967/visiteurs/%s/%s", matricule, mdp);
@@ -59,11 +61,12 @@ public class MainActivity extends AppCompatActivity {
 
                     Session.ouvrir(visiteur);
                     if(Session.estOuverte()) {
-                        bSeConnecter = findViewById(R.id.bSeConnecter);
-                        bSeDeconnecter = findViewById(R.id.bAnnuler);
+                        // bSeDeconnecter = findViewById(R.id.bAnnuler);
                         Toast.makeText(this, visiteur.getPrenom() + " " + visiteur.getNom(), Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(MainActivity.this, MenuRvActivity.class);
+                        startActivity(intent);
                         bSeConnecter.setEnabled(false);
-                        bSeDeconnecter.setEnabled(false);
+                        // bSeDeconnecter.setEnabled(false);
                     } else {
                         Toast.makeText(this, "Échec à la connexion. Recommencez...", Toast.LENGTH_LONG).show();
                         annuler(view);
@@ -98,8 +101,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void annuler(View view) {
-        etMatricule = findViewById(R.id.etMatricule);
-        etMdp = findViewById(R.id.etMdp);
         etMatricule.setText("");
         etMdp.setText("");
     }
