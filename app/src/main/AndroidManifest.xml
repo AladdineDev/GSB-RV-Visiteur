@@ -14,6 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GSBRVVisiteur">
         <activity
+            android:name=".VisuEchantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VisuRvActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListeRvActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SaisieEchantActivity"
+            android:exported="false" />
+        <activity
             android:name=".RechercheRvActivity"
             android:exported="false" />
         <activity

@@ -9,6 +9,8 @@ GSB Rapports Visite - module Visiteur – par [@Aaldn](https://github.com/Aaldn)
 
 Application de saisie des rapports de visite.
 
+<div><img src="screenshots/1-Connexion.png" width="32.9%"></img> <img src="screenshots/2-Menu Rapport Visite.png" width="32.9%"> <img src="screenshots/3-Selection Rapport Visite.png" width="32.9%"></img></div>
+
 ### Documentation
 
   * [Documentation utilisateur](docs/Documentation-Utilisateur.pdf) _(À venir)_

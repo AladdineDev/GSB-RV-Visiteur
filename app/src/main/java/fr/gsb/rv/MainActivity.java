@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     Session.ouvrir(visiteur);
                     if(Session.estOuverte()) {
                         // bSeDeconnecter = findViewById(R.id.bAnnuler);
-                        Toast.makeText(this, visiteur.getPrenom() + " " + visiteur.getNom(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Bienvenue " + visiteur.getPrenom() + " " + visiteur.getNom(), Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(MainActivity.this, MenuRvActivity.class);
                         startActivity(intent);
                         bSeConnecter.setEnabled(false);
