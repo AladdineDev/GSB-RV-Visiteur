@@ -1,6 +1,6 @@
 <img src="app/src/main/res/drawable/logo.png" align="right" width="200px"/>
 
-GSB RV Visiteur [![Version](https://img.shields.io/badge/version-1.0.0-2fba00.svg?style=flat-square)](#readme) [![Licence](https://img.shields.io/badge/licence-MIT-2fba00.svg?style=flat-square)](https://github.com/Aaldn/GSB-RV-Visiteur/blob/master/LICENSE.md)
+GSB RV Visiteur [![Licence](https://img.shields.io/badge/licence-MIT-2fba00.svg?style=flat-square)](https://github.com/Aaldn/GSB-RV-Visiteur/blob/master/LICENSE.md)
 ========================
 
 GSB Rapports Visite - module Visiteur – par [@Aaldn](https://github.com/Aaldn)
