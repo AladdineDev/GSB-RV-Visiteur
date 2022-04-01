@@ -5,11 +5,12 @@ GSB RV Visiteur [![Licence](https://img.shields.io/badge/licence-MIT-2fba00.svg?
 
 GSB Rapports Visite - module Visiteur – par [@Aaldn](https://github.com/Aaldn)
 
-[![Java 11](https://img.shields.io/badge/Java-11-0074bd.svg?style=flat-square&logo=java)](https://openjdk.java.net/) [![Gradle 7](https://img.shields.io/badge/Gradle-7.2-02303a.svg?style=flat-square&logo=gradle)](https://gradle.org/)
+[![Java 11](https://img.shields.io/badge/Java-11-0074bd.svg?style=flat-square&logo=java)](https://openjdk.java.net/)
+[![Gradle 7](https://img.shields.io/badge/Gradle-7.2-02303a.svg?style=flat-square&logo=gradle)](https://gradle.org/)
 
 Application de saisie des rapports de visite.
 
-<div><img src="screenshots/1-Connexion.png" width="32.9%"></img> <img src="screenshots/2-Menu Rapport Visite.png" width="32.9%"> <img src="screenshots/3-Selection Rapport Visite.png" width="32.9%"></img></div>
+<div><img src="screenshots/1-Connexion.png" width="32%"></img> <img src="screenshots/2-Menu Rapport Visite.png" width="32%"> <img src="screenshots/3-Selection Rapport Visite.png" width="32%"></img></div>
 
 ### Documentation
 
@@ -20,7 +21,7 @@ Application de saisie des rapports de visite.
 
 1. [GSB - Fiche descriptive](docs/01-GSB-AppliRV-FicheDescriptive.pdf)
 2. [GSB - Cas d'utilisation](docs/02-GSB-AppliRV-Visiteur-UC.pdf)
-3. [GSB - Modèle Entité-Association](docs/03-GSB-AppliRV-MEA.pdf) _(À venir)_
+3. [GSB - Modèle Entité-Association](docs/03-GSB-AppliRV-MEA.pdf)
 4. [GSB - Diagramme de navigation](docs/04-GSB-AppliRV-Navigation.pdf)
 5. [GSB - Documentation API / Arborescence](docs/05-GSB-AppliRV-Documentation-API.pdf)
 
