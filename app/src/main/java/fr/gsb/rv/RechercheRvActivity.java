@@ -2,21 +2,27 @@ package fr.gsb.rv;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.gsb.rv.technique.Annee;
+import fr.gsb.rv.technique.Mois;
+
 public class RechercheRvActivity extends AppCompatActivity {
 
     Spinner spinnerMois;
     Spinner spinnerAnnee;
+    Button bAfficherRapports;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,24 +31,24 @@ public class RechercheRvActivity extends AppCompatActivity {
 
         spinnerMois = findViewById(R.id.spinnerMois);
         spinnerAnnee = findViewById(R.id.spinnerAnnee);
+        bAfficherRapports = findViewById(R.id.bAfficherRapports);
 
-        ArrayAdapter<Integer> aaMois = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
+        ArrayAdapter<Mois> aaMois = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Mois.values());
         aaMois.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerMois.setAdapter(aaMois);
-        AdapterView.OnItemSelectedListener variable = new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                List<Integer> annees = new ArrayList<>();
-                LocalDate aujourdhui = LocalDate.now();
-                for (int y = 0; y <= 5; y++) {
-                    annees.add(aujourdhui.minusYears(y).getYear());
-                }
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+        ArrayAdapter<Integer> aaAnnee = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Annee.getYears(5));
+        aaMois.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerAnnee.setAdapter(aaAnnee);
 
-            }
-        };
+        bAfficherRapports.setOnClickListener(view -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("mois", spinnerMois.getSelectedItem().toString());
+            bundle.putString("annee", spinnerAnnee.getSelectedItem().toString());
+            Intent intent = new Intent(RechercheRvActivity.this, ListeRvActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
+        });
+
     }
 }
