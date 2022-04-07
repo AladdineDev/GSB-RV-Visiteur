@@ -43,12 +43,11 @@ public class RechercheRvActivity extends AppCompatActivity {
 
         bAfficherRapports.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
-            bundle.putString("mois", spinnerMois.getSelectedItem().toString());
+            bundle.putString("mois", String.valueOf(Mois.valueOf(spinnerMois.getSelectedItem().toString()).ordinal() + 1));
             bundle.putString("annee", spinnerAnnee.getSelectedItem().toString());
             Intent intent = new Intent(RechercheRvActivity.this, ListeRvActivity.class);
             intent.putExtras(bundle);
             startActivity(intent);
         });
-
     }
 }
