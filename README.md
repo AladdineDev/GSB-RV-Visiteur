@@ -1,9 +1,9 @@
 <img src="app/src/main/res/drawable/logo.png" align="right" width="200px"/>
 
-GSB RV Visiteur [![Licence](https://img.shields.io/badge/licence-MIT-2fba00.svg?style=flat-square)](https://github.com/Aaldn/GSB-RV-Visiteur/blob/master/LICENSE.md)
+GSB RV Visiteur [![Licence](https://img.shields.io/badge/licence-MIT-2fba00.svg?style=flat-square)](https://github.com/AladdineDev/GSB-RV-Visiteur/blob/master/LICENSE.md)
 ========================
 
-GSB Rapports Visite - module Visiteur – par [@Aaldn](https://github.com/Aaldn)
+GSB Rapports Visite - module Visiteur – par [@AladdineDev](https://github.com/AladdineDev)
 
 [![Java 11](https://img.shields.io/badge/Java-11-0074bd.svg?style=flat-square&logo=java)](https://openjdk.java.net/)
 [![Gradle 7](https://img.shields.io/badge/Gradle-7.2-02303a.svg?style=flat-square&logo=gradle)](https://gradle.org/)
@@ -28,22 +28,22 @@ Application de saisie des rapports de visite.
 ### Prérequis
 
   * [Android Studio](https://developer.android.com/studio/) + création d'un [terminal virtuel](https://developer.android.com/studio/run/managing-avds) (API 28 Android 9.0 Pie !)
-  * [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur)
+  * [GSB-RV-Visiteur-Serveur](https://github.com/AladdineDev/GSB-RV-Visiteur-Serveur)
 
 > En cas de difficulté, reportez-vous à la documentation officielle d'[Android Studio](https://developer.android.com/docs).
 
 ## Installation
 
-_Rappel :_ cette application dépend du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur). Avant de poursuivre, assurez-vous de l'avoir correctement installé.
+_Rappel :_ cette application dépend du projet [GSB-RV-Visiteur-Serveur](https://github.com/AladdineDev/GSB-RV-Visiteur-Serveur). Avant de poursuivre, assurez-vous de l'avoir correctement installé.
 
-1. Positionnez-vous au sein du répertoire créé lors de l'installation du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur), puis clonez ce dépôt : 
+1. Positionnez-vous au sein du répertoire créé lors de l'installation du projet [GSB-RV-Visiteur-Serveur](https://github.com/AladdineDev/GSB-RV-Visiteur-Serveur), puis clonez ce dépôt : 
 
 ```bash
 $ cd AppliRV
-$ git clone https://github.com/Aaldn/GSB-RV-Visiteur
+$ git clone https://github.com/AladdineDev/GSB-RV-Visiteur
 ```
 
-2. Créez un lien vers le certificat SSL du projet [GSB-RV-Visiteur-Serveur](https://github.com/Aaldn/GSB-RV-Visiteur-Serveur) dans ce projet :
+2. Créez un lien vers le certificat SSL du projet [GSB-RV-Visiteur-Serveur](https://github.com/AladdineDev/GSB-RV-Visiteur-Serveur) dans ce projet :
 
 ```bash
 $ mkdir -p GSB-RV-Visiteur/app/src/main/res/raw
@@ -54,4 +54,4 @@ Vous pouvez maintenant [lancer votre application](https://developer.android.com/
 
 ## Licence
 
-Voir le fichier [LICENSE.md](https://github.com/Aaldn/GSB-RV-Visiteur/blob/master/LICENSE.md) fourni.
+Voir le fichier [LICENSE.md](https://github.com/AladdineDev/GSB-RV-Visiteur/blob/master/LICENSE.md) fourni.
